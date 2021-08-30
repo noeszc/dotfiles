@@ -1,0 +1,93 @@
+env:
+  TERM: xterm-256color
+live_config_reload: true
+
+scrolling:
+    history: 10000
+    multiplier: 10
+
+selection:
+    semantic_escape_chars: '|:"'' {}()[]<>'
+    save_to_clipboard: true
+
+window:
+  padding:
+    x: 10
+    y: 5
+
+font:
+  normal:
+    family: Monaco
+    style: Regular
+
+  bold:
+    family: Monaco
+    style: Regular
+
+  size: 13
+
+  offset:
+    x: 2
+    y: 8
+
+  1lyph_offset:
+    x: 0
+    y: 6
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+mouse:
+  hide_when_typing: true
+
+# Colors (Iceberg Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#161821'
+    foreground: '#d2d4de'
+
+  # Normal colors
+  normal:
+    black:   '#161821'
+    red:     '#e27878'
+    green:   '#b4be82'
+    yellow:  '#e2a478'
+    blue:    '#84a0c6'
+    magenta: '#a093c7'
+    cyan:    '#89b8c2'
+    white:   '#c6c8d1'
+
+  # Bright colors
+  bright:
+    black:   '#6b7089'
+    red:     '#e98989'
+    green:   '#c0ca8e'
+    yellow:  '#e9b189'
+    blue:    '#91acd1'
+    magenta: '#ada0d3'
+    cyan:    '#95c4ce'
+    white:   '#d2d4de'
+
+key_bindings:
+  - { key: N,      mods: Command,         action: SpawnNewInstance }
+  - { key: Q,      mods: Command,         action: Quit             }
+  - { key: W,      mods: Command,         action: Quit             }
+  - { key: F,      mods: Command|Control, action: ToggleFullscreen }
+  - { key: 36,     mods: Command,         action: ToggleFullscreen }
+  - { key: Space,     mods: Alt,          chars: " "                     }
+  - { key: Back, mods: Super, chars: "\x15" } 
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       } 
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       }
+  - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor   }
+  - { key: 10,        mods: Alt,    chars: "\x5c" }
+  - { key: 18,        mods: Alt,    chars: "\x7c" }
+  - { key: Key2,      mods: Alt,    chars: "@" } 
+  - { key: Key3,      mods: Alt,    chars: "#" }
+  - { key: Key6,      mods: Alt,    chars: "¬" }
+  - { key: 39,        mods: Alt,    chars: "{" }
+  - { key: 42,        mods: Alt,    chars: "}" }
+  - { key: 33,        mods: Alt,    chars: "[" }
+  - { key: 30,        mods: Alt,    chars: "]" }
