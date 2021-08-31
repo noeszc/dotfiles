@@ -34,7 +34,7 @@ filetype plugin indent on
 " set t_Co=256
 set termguicolors
 syntax enable
-colorscheme rose-pine
+colorscheme iceberg
 
 set noerrorbells
 set novisualbell
