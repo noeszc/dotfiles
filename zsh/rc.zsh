@@ -7,6 +7,7 @@ source_if_exists () {
 source_if_exists $HOME/.env.sh
 source_if_exists "$DOTFILES/zsh/zplug.zsh"
 source_if_exists $DOTFILES/zsh/aliases.zsh
+source_if_exists $HOME/.asdf/asdf.sh
 source_if_exists /usr/local/etc/profile.d/z.sh
 
 if type "direnv" > /dev/null; then
@@ -41,8 +42,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # export FZF_DEFAULT_COMMAND='rg --files'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nsanchez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nsanchez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nsanchez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nsanchez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+eval "$(pyenv init --path)"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

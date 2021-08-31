@@ -24,15 +24,15 @@ font:
     family: Monaco
     style: Regular
 
-  size: 13
+  size: 14
 
   offset:
     x: 2
-    y: 8
+    y: 0
 
   1lyph_offset:
     x: 0
-    y: 6
+    y: 0
 
 cursor:
   style: Block
@@ -42,34 +42,69 @@ mouse:
   hide_when_typing: true
 
 # Colors (Iceberg Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#161821'
+#     foreground: '#d2d4de'
+
+#   # Normal colors
+#   normal:
+#     black:   '#161821'
+#     red:     '#e27878'
+#     green:   '#b4be82'
+#     yellow:  '#e2a478'
+#     blue:    '#84a0c6'
+#     magenta: '#a093c7'
+#     cyan:    '#89b8c2'
+#     white:   '#c6c8d1'
+
+#   # Bright colors
+#   bright:
+#     black:   '#6b7089'
+#     red:     '#e98989'
+#     green:   '#c0ca8e'
+#     yellow:  '#e9b189'
+#     blue:    '#91acd1'
+#     magenta: '#ada0d3'
+#     cyan:    '#95c4ce'
+#     white:   '#d2d4de'
+
+# Rose Pine Theme (https://github.com/rose-pine/alacritty)
 colors:
-  # Default colors
   primary:
-    background: '#161821'
-    foreground: '#d2d4de'
-
-  # Normal colors
+    background: '0x191724'
+    foreground: '0xe0def4'
+  cursor:
+    text: '0x191724'
+    cursor: '0x796268'
+  vi_mode_cursor:
+    text: '0x191724'
+    cursor: '0x796268'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '0x2A2738'
   normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
-
-  # Bright colors
+    black:   '0x6e6a86'
+    red:     '0xeb6f92'
+    green:   '0x9ccfd8'
+    yellow:  '0xf6c177'
+    blue:    '0x31748f'
+    magenta: '0xc4a7e7'
+    cyan:    '0xebbcba'
+    white:   '0xe0def4'
   bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
-
+    black:   '0x6e6a86'
+    red:     '0xeb6f92'
+    green:   '0x9ccfd8'
+    yellow:  '0xf6c177'
+    blue:    '0x31748f'
+    magenta: '0xc4a7e7'
+    cyan:    '0xebbcba'
+    white:   '0xe0def4'
 key_bindings:
   - { key: N,      mods: Command,         action: SpawnNewInstance }
   - { key: Q,      mods: Command,         action: Quit             }

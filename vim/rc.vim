@@ -25,6 +25,7 @@ call minpac#add('styled-components/vim-styled-components', { 'branch': 'main' })
 call minpac#add('jparise/vim-graphql')
 
 call minpac#add('cocopon/iceberg.vim')
+call minpac#add('rose-pine/neovim')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
@@ -33,7 +34,7 @@ filetype plugin indent on
 " set t_Co=256
 set termguicolors
 syntax enable
-colorscheme iceberg
+colorscheme rose-pine
 
 set noerrorbells
 set novisualbell

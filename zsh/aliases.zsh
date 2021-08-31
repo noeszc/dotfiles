@@ -1,5 +1,4 @@
 # ALIASES ---------------------------------------------------------------------
-alias python=/usr/local/bin/python3
 alias unmount_all_and_exit='unmount_all && exit'
 alias d=docker
 alias dc=docker-compose
