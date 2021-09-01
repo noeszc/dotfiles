@@ -24,8 +24,10 @@ call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('styled-components/vim-styled-components', { 'branch': 'main' })
 call minpac#add('jparise/vim-graphql')
 
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('cocopon/iceberg.vim')
-call minpac#add('rose-pine/neovim')
+call minpac#add('gkeep/iceberg-dark')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
@@ -39,6 +41,8 @@ colorscheme iceberg
 set noerrorbells
 set novisualbell
 set t_vb=
+
+let g:airline_theme='icebergDark'
 
 " moving around, searching, and patterns ----------------------------------
 set incsearch

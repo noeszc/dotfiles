@@ -17,18 +17,14 @@ window:
 
 font:
   normal:
-    family: Monaco
-    style: Regular
-
-  bold:
-    family: Monaco
-    style: Regular
+    family: "CodeNewRoman Nerd Font"
+    style: Book
 
   size: 14
 
   offset:
-    x: 2
-    y: 0
+    x: 0
+    y: 6
 
   1lyph_offset:
     x: 0
