@@ -17,10 +17,10 @@ window:
 
 font:
   normal:
-    family: "CodeNewRoman Nerd Font"
-    style: Book
+    family: "Monaco"
+    style: Regular
 
-  size: 14
+  size: 13
 
   offset:
     x: 0
@@ -28,7 +28,65 @@ font:
 
   1lyph_offset:
     x: 0
-    y: 0
+    y: 6
+color_schemes:
+  dark: &dark
+    cursor:
+      text: '0x1c1c1c'
+      cursor: '0xF1F1F1'
+    primary:
+      background: '0x1c1c1c'
+      foreground: '0xe5e1d8'
+    normal:
+      black:   '0x000000'
+      red:     '0xf7786d'
+      green:   '0xbde97c'
+      yellow:  '0xefdfac'
+      blue:    '0x6ebaf8'
+      magenta: '0xef88ff'
+      cyan:    '0x90fdf8'
+      white:   '0xf5f5f5'
+    bright:
+      black:   '0xb4b4b4'
+      red:     '0xf99f92'
+      green:   '0xe3f7a1'
+      yellow:  '0xf2e9bf'
+      blue:    '0xb3d2ff'
+      magenta: '0xe5bdff'
+      cyan:    '0xc2fefa'
+      white:   '0xffffff'
+  light: &light
+    cursor:
+      text: '0xFFFFFF'
+      cursor: '0xa1a1a1'
+    # Papercolor modified
+    primary:
+      background: '0xFFFFFF'
+      foreground: '0x4D4D4C'
+
+    # Normal colors
+    normal:
+      black:   '0x444444'
+      red:     '0x9e0047'
+      green:   '0x718C00'
+      yellow:  '0xb25000'
+      blue:    '0x4271AE'
+      magenta: '0x8959A8'
+      cyan:    '0x3E999F'
+      white:   '0xf5f5f5'
+
+    # Bright colors
+    bright:
+      black:   '0x969694'
+      red:     '0xff0072'
+      green:   '0x8eb200'
+      yellow:  '0xff7200'
+      blue:    '0x5ea2f9'
+      magenta: '0xa56ccc'
+      cyan:    '0x51c8d1'
+      white:   '0xffffff'
+
+colors: *dark
 
 cursor:
   style: Block
@@ -36,35 +94,6 @@ cursor:
 
 mouse:
   hide_when_typing: true
-
-# Colors (Iceberg Dark)
-colors:
-  # Default colors
-  primary:
-    background: '#161821'
-    foreground: '#d2d4de'
-
-  # Normal colors
-  normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
-
-  # Bright colors
-  bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
 
 key_bindings:
   - { key: N,      mods: Command,         action: SpawnNewInstance }

@@ -27,7 +27,7 @@ precmd() {
     source $DOTFILES/zsh/aliases.zsh
 }
 
-# Zsh theme mode
+# Zsh theme light
 SOBOLE_THEME_MODE='dark'
 
 export VISUAL=nvim

@@ -24,10 +24,7 @@ call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('styled-components/vim-styled-components', { 'branch': 'main' })
 call minpac#add('jparise/vim-graphql')
 
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('cocopon/iceberg.vim')
-call minpac#add('gkeep/iceberg-dark')
+call minpac#add('arzg/vim-substrata')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
@@ -36,13 +33,15 @@ filetype plugin indent on
 " set t_Co=256
 set termguicolors
 syntax enable
-colorscheme iceberg
+" autocmd ColorScheme sick highlight Normal ctermbg=235
+colorscheme substrata
 
 set noerrorbells
 set novisualbell
 set t_vb=
 
-let g:airline_theme='icebergDark'
+let g:airline_theme='laederon'
+let g:airline_powerline_fonts = 1
 
 " moving around, searching, and patterns ----------------------------------
 set incsearch
@@ -58,7 +57,7 @@ set linebreak
 set nowrap
 " syntax, highlighting, spelling
 set hlsearch
-set background=dark
+" set background=light
 set colorcolumn=80 
 set mouse=a
 set re=0
@@ -281,3 +280,35 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" autocmd BufWritePre *.js,*.cjs,*.mcjs call CocAction('runCommand', 'eslint.executeAutofix')
+"
+function! ToggleAccent()
+   " Vowels
+   let withAccent   = [ "á", "é", "í", "ó", "ú", "ñ", "Á", "É", "Í", "Ó", "Ú" ]
+   let withNoAccent = [ "a", "e", "i", "o", "u", "n", "A", "E", "I", "O", "U" ]
+
+   " A better way of getting the character under the cursor
+   " From: https://stackoverflow.com/a/23323958/1121933
+   let character = matchstr( getline('.'), '\%' . col('.') . 'c.' )
+
+   " If it's a vowel without an acute accent over it, 'position' will contain
+   " the index of the matching element in the 'withNoAccent' list or -1 otherwise.
+   let position = match( withNoAccent , character )
+   if position != -1
+      " Replace it with an accented vowel
+      execute ":normal! r" . withAccent[position]
+   else
+      " Check if it's a vowel with an acute accent over it
+      let position = match( withAccent , character )
+      if position != -1
+         " Replace it with a vowel with no accent
+         execute ":normal! r" . withNoAccent[position]
+     endif
+   endif
+
+   " Do nothing if it isn't a vowel
+endfunction
+
+" Map the '-' key
+nnoremap <silent> - :call ToggleAccent()<CR>

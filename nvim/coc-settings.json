@@ -10,7 +10,7 @@
     "ts"
   ],
   "tsserver.formatOnType": true,
+  "javascript.suggestionActions.enabled": false,
   "coc.preferences.formatOnType": true,
   "prettier.disableSuccessMessage": true
 }
-
