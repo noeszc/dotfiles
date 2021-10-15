@@ -34,19 +34,10 @@ export VISUAL=nvim
 export EDITOR=nvim
 export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_COMMAND='rg --files'
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init --path)"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# Python
+export PATH="$(pyenv root)/shims:$PATH"
+eval "$(pyenv init -)"

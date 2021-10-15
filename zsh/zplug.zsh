@@ -1,14 +1,17 @@
 source ~/zplug/init.zsh
 
-# Theme, should be the last:
-zplug "sobolevn/sobole-zsh-theme", as:theme
+
 
 # Sorted in order of appearance (new at the bottom):
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "lib/history", from:oh-my-zsh
 
-# Install plugins if there are plugins that have not been installed:
+# Theme, should be the last:
+# zplug "geometry-zsh/geometry"
+zplug "sobolevn/sobole-zsh-theme", from:github, as:theme
+  
+
 if ! zplug check; then
   zplug install
 fi

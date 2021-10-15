@@ -24,7 +24,10 @@ call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('styled-components/vim-styled-components', { 'branch': 'main' })
 call minpac#add('jparise/vim-graphql')
 
-call minpac#add('arzg/vim-substrata')
+
+call minpac#add('rktjmp/lush.nvim')
+call minpac#add('casonadams/walh')
+call minpac#add('axvr/raider.vim')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
@@ -34,14 +37,11 @@ filetype plugin indent on
 set termguicolors
 syntax enable
 " autocmd ColorScheme sick highlight Normal ctermbg=235
-colorscheme substrata
+colorscheme raider
 
 set noerrorbells
 set novisualbell
 set t_vb=
-
-let g:airline_theme='laederon'
-let g:airline_powerline_fonts = 1
 
 " moving around, searching, and patterns ----------------------------------
 set incsearch
@@ -57,7 +57,7 @@ set linebreak
 set nowrap
 " syntax, highlighting, spelling
 set hlsearch
-" set background=light
+" set background=dark
 set colorcolumn=80 
 set mouse=a
 set re=0
@@ -164,8 +164,8 @@ cnoreabbrev nowrap set nowrap
 set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
 
-highlight ExtraWhitespace ctermbg=0 guibg=#282a2e
-match ExtraWhitespace /\s\+$/
+" highlight ExtraWhitespace ctermbg=0 guibg=#282a2e
+" match ExtraWhitespace /\s\+$/
 
 let g:yats_host_keyword = 1
 
@@ -228,7 +228,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -312,3 +312,4 @@ endfunction
 
 " Map the '-' key
 nnoremap <silent> - :call ToggleAccent()<CR>
+

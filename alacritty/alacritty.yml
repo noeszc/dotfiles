@@ -17,18 +17,31 @@ window:
 
 font:
   normal:
-    family: "Monaco"
-    style: Regular
+    family: "SF Mono"
+    style: "Regular"
 
-  size: 13
+  italic:
+    family: "SF Mono"
+    style: "Regular"
+
+  bold_italic:
+    family: "SF Mono"
+    style: "Regular"
+
+  bold:
+    family: "SF Mono"
+    style: "Medium"
+
+  size: 15
 
   offset:
-    x: 0
-    y: 6
+    x: -2
+    y: 7 
 
-  1lyph_offset:
+  glyph_offset:
     x: 0
-    y: 6
+    y: 0
+
 color_schemes:
   dark: &dark
     cursor:
@@ -75,7 +88,7 @@ color_schemes:
       cyan:    '0x3E999F'
       white:   '0xf5f5f5'
 
-    # Bright colors
+    # Bright colos
     bright:
       black:   '0x969694'
       red:     '0xff0072'
@@ -87,7 +100,6 @@ color_schemes:
       white:   '0xffffff'
 
 colors: *dark
-
 cursor:
   style: Block
   unfocused_hollow: true
