@@ -12,5 +12,12 @@
   "tsserver.formatOnType": true,
   "javascript.suggestionActions.enabled": false,
   "coc.preferences.formatOnType": true,
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "prettier.arrowParens": "always",
+  "prettier.printWidth": 80,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "all",
+  "prettier.useTabs": false
 }
