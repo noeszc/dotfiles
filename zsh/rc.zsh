@@ -6,9 +6,10 @@ source_if_exists () {
 
 source_if_exists $HOME/.env.sh
 source_if_exists "$DOTFILES/zsh/zplug.zsh"
+source_if_exists ~/.fzf.zsh
 source_if_exists $DOTFILES/zsh/aliases.zsh
 source_if_exists $HOME/.asdf/asdf.sh
-source_if_exists /usr/local/etc/profile.d/z.sh
+source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
 if type "direnv" > /dev/null; then
     eval "$(direnv hook zsh)"
@@ -39,5 +40,7 @@ export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin"
 export FZF_DEFAULT_COMMAND='rg --files'
 
 # Python
-export PATH="$(pyenv root)/shims:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin/:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"

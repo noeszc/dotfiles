@@ -10,13 +10,15 @@ call minpac#add('scrooloose/nerdtree')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('mileszs/ack.vim')
+call minpac#add('github/copilot.vim')
 
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('mhinz/vim-signify')
+" call minpac#add('tpope/vim-fugitive')
+" call minpac#add('mhinz/vim-signify')
 
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('machakann/vim-highlightedyank')
+call minpac#add('alvan/vim-closetag')
 
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('leafgarland/typescript-vim')
@@ -26,8 +28,8 @@ call minpac#add('jparise/vim-graphql')
 
 
 call minpac#add('rktjmp/lush.nvim')
-call minpac#add('casonadams/walh')
 call minpac#add('axvr/raider.vim')
+call minpac#add('exb/minimo')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
@@ -57,7 +59,7 @@ set linebreak
 set nowrap
 " syntax, highlighting, spelling
 set hlsearch
-" set background=dark
+" set background=light
 set colorcolumn=80 
 set mouse=a
 set re=0
@@ -71,7 +73,7 @@ set softtabstop=2
 set tabstop=2
 
 "autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-"autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+" autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 autocmd FileType mail setlocal fo+=aw
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.txt set filetype=markdown
@@ -117,7 +119,8 @@ nnoremap <leader><space> :noh<cr>
 " project navigation  -----------------------------------------------------
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-p> :GFiles<cr>
-nnoremap & :execute 'Ag '.expand('<cword>')<CR>
+command! -bang -nargs=* Agg call fzf#vim#grep('ag --nogroup --column --color -w ' . shellescape(<q-args>), 0, fzf#vim#with_preview(), <bang>0)
+nnoremap & :execute 'Agg '.expand('<cword>')<CR>
 
 " Buffers -----------------------------------------------------------------
 " This allows buffers to be hidden if you've modified a buffer.
@@ -235,6 +238,8 @@ nmap <leader>rn <Plug>(coc-rename)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+vmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>gh  :OpenGithubFile<cr>
@@ -281,8 +286,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-" autocmd BufWritePre *.js,*.cjs,*.mcjs call CocAction('runCommand', 'eslint.executeAutofix')
-"
+" closetag
+let g:closetag_filenames = '*.html, *.xhtml, *.tsx, *.jsx, *.js'
+
 function! ToggleAccent()
    " Vowels
    let withAccent   = [ "á", "é", "í", "ó", "ú", "ñ", "Á", "É", "Í", "Ó", "Ú" ]

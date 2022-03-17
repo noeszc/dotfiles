@@ -17,30 +17,27 @@ window:
 
 font:
   normal:
-    family: "SF Mono"
+    family: "Monaco"
     style: "Regular"
 
-  italic:
-    family: "SF Mono"
-    style: "Regular"
+#   italic:
+#     family: "Monaco"
+#     style: "Regular"
 
-  bold_italic:
-    family: "SF Mono"
-    style: "Regular"
+#   bold_italic:
+#     family: "Monaco"
+#     style: "Regular"
 
-  bold:
-    family: "SF Mono"
-    style: "Medium"
-
-  size: 15
+  size: 12
+  use_thin_strokes: false
 
   offset:
-    x: -2
-    y: 7 
-
-  glyph_offset:
     x: 0
-    y: 0
+    y: 1 
+
+#   glyph_offset:
+#     x: 0
+#     y: 6
 
 color_schemes:
   dark: &dark
