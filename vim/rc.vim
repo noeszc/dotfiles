@@ -29,17 +29,18 @@ call minpac#add('jparise/vim-graphql')
 
 call minpac#add('rktjmp/lush.nvim')
 call minpac#add('axvr/raider.vim')
-call minpac#add('exb/minimo')
+call minpac#add('arcticicestudio/nord-vim')
 
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
 filetype plugin indent on
 
-" set t_Co=256
-set termguicolors
+set t_Co=256
+" set termguicolors
 syntax enable
 " autocmd ColorScheme sick highlight Normal ctermbg=235
-colorscheme raider
+" colorscheme raider
+colorscheme nord
 
 set noerrorbells
 set novisualbell
