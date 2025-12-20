@@ -1,0 +1,27 @@
+[user]
+    name = Noé Sánchez
+    email = noeszc@gmail.com
+
+[url "git@github.com:noeszc/"]
+    insteadOf = "me:"
+
+[includeIf "gitdir:~/code/work/"]
+    path = ~/.work.gitconfig
+
+[core]
+    pager = delta
+
+[delta]
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[push]
+    autoSetupRemote = true
