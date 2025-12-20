@@ -1,0 +1,34 @@
+# --- font
+font-family              = Monaco
+font-size                = 12
+
+# --- layout & spacing
+# ajustado para que no se vea tan estirado con tamaño 12
+adjust-cell-height       = 10%
+adjust-cell-width        = 0%
+window-padding-x         = 12
+window-padding-y         = 10
+
+# --- theme
+# theme = dark:modus_vivendi_tritanopia,light:modus_operandi_tritanopia
+
+# --- font styles
+font-style-italic        = false
+font-style-bold          = false
+font-style-bold-italic   = false
+font-synthetic-style     = false
+
+# --- cursor & visual
+cursor-invert-fg-bg      = true
+cursor-opacity           = 0.8
+adjust-cursor-thickness  = 2
+adjust-underline-position = 2
+bold-is-bright           = false
+
+# --- shell & behavior
+shell-integration        = zsh
+link-url                 = true
+mouse-hide-while-typing  = true
+
+# --- keybindings
+keybind = shift+enter=text:\x1b\r
