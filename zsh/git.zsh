@@ -71,7 +71,7 @@ pretty_git_format() {
     sed -Ee 's/ weeks?\)/w\)/' |
     sed -Ee 's/ months?\)/M\)/' |
     # Shorten names
-    sed -Ee 's/<Noe Sanchez>/<me>/' |
+    sed -Ee 's/<Noé Sánchez>/<me>/' |
     sed -Ee 's/<([^ >]+) [^>]*>/<\1>/' |
     # Line columns up based on } delimiter
     column -s '}' -t
