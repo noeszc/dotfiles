@@ -20,3 +20,11 @@ vim.g.maplocalleader = "\\"
 require "noeszc.options"
 require "noeszc.keymaps"
 
+
+require("lazy").setup({
+  spec = {
+{ import = "plugins" },
+  },
+  defaults = { lazy = false },
+  install = { colorscheme = { "tokyonight-moon" } },
+})
