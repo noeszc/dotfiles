@@ -4,6 +4,7 @@ cask "spotify"
 cask "google-chrome"
 cask "slack"
 
+brew "fnm"
 brew "neovim"
 brew "zsh"
 brew "zoxide"

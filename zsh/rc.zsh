@@ -26,6 +26,7 @@ source_if_exists $DOTFILES/zsh/secrets.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
 source_if_exists ~/.fzf.zsh
 source_if_exists $DOTFILES/zsh/aliases.zsh
+source_if_exists $DOTFILES/zsh/node.zsh
 
 if type "zoxide" > /dev/null; then
     eval "$(zoxide init zsh)"
@@ -34,6 +35,8 @@ fi
 if type "direnv" > /dev/null; then
     eval "$(direnv hook zsh)"
 fi
+
+
 
 autoload -U zmv
 autoload -U promptinit && promptinit
