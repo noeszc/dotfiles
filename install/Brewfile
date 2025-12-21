@@ -1,4 +1,5 @@
 cask "ghostty"
+cask "raycast"
 cask "1password"
 cask "spotify"
 cask "google-chrome"
