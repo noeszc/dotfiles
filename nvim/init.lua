@@ -21,13 +21,19 @@ require("noeszc.keymaps")
 
 require("lazy").setup({
 	spec = {
-		{
-			"mcauley-penney/techbase.nvim",
-			config = function(_, opts)
-				vim.cmd.colorscheme("techbase")
-			end,
-			priority = 1000,
-		},
+		-- {
+		-- 	"mcauley-penney/techbase.nvim",
+		-- 	config = function(_, opts)
+		-- 		vim.cmd.colorscheme("techbase")
+		-- 	end,
+		-- 	priority = 1000,
+		-- },
+		-- {
+		-- 	"barrett-ruth/midnight.nvim",
+		-- 	config = function()
+		-- 		vim.cmd.colorscheme("midnight")
+		-- 	end,
+		-- },
 		-- --- smart commenting based on treesitter
 		{ "folke/ts-comments.nvim", opts = {}, event = "BufReadPre" },
 

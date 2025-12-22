@@ -27,10 +27,15 @@ return {
 		}
 
 		require("mason").setup()
-		mason_tools.setup({ ensure_installed = ensure_installed })
-		mason_tools.run_on_start()
+		mason_tools.setup({
+			ensure_installed = ensure_installed,
+			auto_update = false,
+			run_on_start = true,
+			start_delay = 1000,
+		})
+		-- mason_tools.run_on_start()
 
-		-- optimize lua lsp for neovim development
+		-- Optimize Lua LSP for Neovim development
 		require("lazydev").setup({
 			library = {
 				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
@@ -39,32 +44,42 @@ return {
 
 		mason_lspconfig.setup()
 
-		-- get capabilities from blink.cmp
+		-- Get capabilities from blink.cmp
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+		-- Custom server settings
 		local server_configs = {
 			stylelint_lsp = {
 				filetypes = { "css", "less", "postcss" },
 			},
+			lua_ls = {
+				settings = {
+					Lua = { diagnostics = { globals = { "vim" } } },
+				},
+			},
 		}
 
-		-- setup all installed servers
+		-- --- New Native LSP Config (Neovim 0.11+)
+		-- We iterate through servers and use vim.lsp.config instead of lspconfig
 		for _, name in pairs(mason_lspconfig.get_installed_servers()) do
 			local config = vim.tbl_deep_extend("force", {
 				capabilities = capabilities,
 			}, server_configs[name] or {})
 
-			require("lspconfig")[name].setup(config)
+			-- Apply the config to the server name
+			vim.lsp.config(name, config)
+			-- Enable the server (this replaces .setup())
+			vim.lsp.enable(name)
 		end
 
 		require("fidget").setup({})
 
-		-- load your custom diagnostic config
+		-- Load your custom diagnostic config
 		require("noeszc.diagnostic")
 
 		local group = vim.api.nvim_create_augroup("NoeszcConfig", { clear = true })
 
-		-- --- lsp keymaps and behavior
+		-- --- LSP keymaps and behavior
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = group,
 			callback = function(event)
@@ -74,7 +89,7 @@ return {
 					vim.keymap.set(mode or "n", keys, func, { buffer = event.buf, remap = true })
 				end
 
-				-- navigation using snacks picker
+				-- Navigation using snacks picker
 				map("gd", function()
 					snacks.picker.lsp_definitions(picker_opts)
 				end)
@@ -93,7 +108,7 @@ return {
 					snacks.picker.lsp_type_definitions(picker_opts)
 				end)
 
-				-- standard lsp actions
+				-- Standard LSP actions
 				map("<leader>rn", vim.lsp.buf.rename)
 				map("<leader>ca", vim.lsp.buf.code_action, { "n", "x" })
 				map("gD", vim.lsp.buf.declaration)
@@ -102,9 +117,8 @@ return {
 				end)
 				map("<leader>e", vim.diagnostic.open_float)
 
-				-- --- document highlighting
+				-- --- Document highlighting
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
-
 				if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 					local highlight_augroup = vim.api.nvim_create_augroup("NoeszcConfigHighlight", { clear = false })
 

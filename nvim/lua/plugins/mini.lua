@@ -28,15 +28,11 @@ return {
 
 		-- visual move (Alt + keys)
 		require("mini.move").setup({
+			options = { basic = true },
 			mappings = {
-				left = "ķ",
-				right = "ł",
-				down = "∆",
-				up = "Ż",
-				line_left = "ķ",
-				line_right = "ł",
-				line_down = "∆",
-				line_up = "Ż",
+				basic = true,
+				windows = true,
+				move_with_alt = false, -- Cambia esto a false
 			},
 		})
 	end,

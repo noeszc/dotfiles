@@ -3,7 +3,6 @@ font-family              = Monaco
 font-size                = 12
 
 # --- layout & spacing
-# ajustado para que no se vea tan estirado con tamaño 12
 adjust-cell-height       = 10%
 adjust-cell-width        = 0%
 window-padding-x         = 12
@@ -11,30 +10,6 @@ window-padding-y         = 10
 
 # --- theme
 # theme = dark:modus_vivendi_tritanopia,light:modus_operandi_tritanopia
-
-palette = 0=#191d23
-palette = 1=#f71735
-palette = 2=#74baa8
-palette = 3=#e9b872
-palette = 4=#a9b9ef
-palette = 5=#bcb6ec
-palette = 6=#1a8c9b
-palette = 7=#ccd5e5
-palette = 8=#474b65
-palette = 9=#ffc0c5
-palette = 10=#0ec256
-palette = 11=#ffa630
-palette = 12=#6a8be3
-palette = 13=#d6ddea
-palette = 14=#5dcd9a
-palette = 15=#d6ddea
-
-background = #191d23
-foreground = #ccd5e5
-cursor-color = #5dcd9a
-cursor-text = #ccd5e5
-selection-background = #1f242d
-selection-foreground = #ccd5e5
 
 # --- font styles
 font-style-italic        = false
@@ -53,6 +28,7 @@ bold-is-bright           = false
 shell-integration        = zsh
 link-url                 = true
 mouse-hide-while-typing  = true
+macos-option-as-alt = true  
 
 # --- keybindings
 keybind = shift+enter=text:\x1b\r
