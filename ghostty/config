@@ -9,7 +9,7 @@ window-padding-x         = 12
 window-padding-y         = 10
 
 # --- theme
-# theme = dark:modus_vivendi_tritanopia,light:modus_operandi_tritanopia
+theme = dark:Rose Pine,light:Rose Pine Dawn
 
 # --- font styles
 font-style-italic        = false
