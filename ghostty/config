@@ -1,6 +1,6 @@
 # --- font
 font-family              = Source Code Pro
-font-size                = 14
+font-size                = 15
 
 # --- layout & spacing
 adjust-cell-height       = 10%
