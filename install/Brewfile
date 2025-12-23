@@ -4,6 +4,7 @@ cask "1password"
 cask "spotify"
 cask "google-chrome"
 cask "slack"
+cask "font-source-code-pro"
 
 brew "fnm"
 brew "neovim"

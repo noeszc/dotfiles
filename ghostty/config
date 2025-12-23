@@ -1,6 +1,6 @@
 # --- font
-font-family              = Monaco
-font-size                = 12
+font-family              = Source Code Pro
+font-size                = 14
 
 # --- layout & spacing
 adjust-cell-height       = 10%
