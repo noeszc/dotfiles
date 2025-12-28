@@ -1,9 +1,9 @@
 # --- font
-font-family              = Source Code Pro
-font-size                = 15
+font-family              = CommitMono
+font-size                = 12
 
 # --- layout & spacing
-adjust-cell-height       = 10%
+adjust-cell-height       = 25%
 adjust-cell-width        = 0%
 window-padding-x         = 12
 window-padding-y         = 10
