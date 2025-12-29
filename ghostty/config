@@ -28,7 +28,7 @@ bold-is-bright           = false
 shell-integration        = zsh
 link-url                 = true
 mouse-hide-while-typing  = true
-macos-option-as-alt = true  
+macos-option-as-alt = false  
 
 # --- keybindings
 keybind = shift+enter=text:\x1b\r
