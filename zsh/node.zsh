@@ -10,3 +10,5 @@ if command -v corepack &> /dev/null; then
   # enables pnpm and yarn based on the current node version
   corepack enable pnpm yarn
 fi
+
+

@@ -24,6 +24,11 @@ return {
 			"vtsls",
 			"eslint",
 			"stylelint_lsp",
+			"tailwindcss",
+			"cssmodules_ls",
+			"emmet_ls",
+			"html",
+			"jsonls",
 		}
 
 		require("mason").setup()
@@ -50,12 +55,27 @@ return {
 		-- Custom server settings
 		local server_configs = {
 			stylelint_lsp = {
-				filetypes = { "css", "less", "postcss" },
+				filetypes = { "css", "less", "postcss", "scss" },
 			},
 			lua_ls = {
 				settings = {
 					Lua = { diagnostics = { globals = { "vim" } } },
 				},
+			},
+			tailwindcss = {
+				settings = {
+					tailwindCSS = {
+						experimental = {
+							classRegex = {
+								{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+								{ "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+							},
+						},
+					},
+				},
+			},
+			emmet_ls = {
+				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss", "less" },
 			},
 		}
 
