@@ -20,10 +20,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Configuring Keyboard repeat rates..."
 
 # English: Set a blazingly fast repeat rate (Standard minimum is 2)
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # English: Set a shorter delay until repeat starts (Standard minimum is 15)
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 
 # -----------------------------------------------------------------------------
