@@ -41,7 +41,7 @@ autoload -U promptinit && promptinit
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
-SOBOLE_THEME_MODE='dark'
+SOBOLE_THEME_MODE='light'
 export VISUAL=nvim
 export EDITOR=nvim
 export FZF_DEFAULT_OPTS="
@@ -51,5 +51,6 @@ export FZF_DEFAULT_OPTS="
 	--color=spinner:#f6c177,info:#9ccfd8
 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
-export PATH="$PATH:/usr/local/sbin:$DOTFILES"
+export PATH="$HOME/.local/bin:$PATH:/usr/local/sbin:$DOTFILES"
+
 

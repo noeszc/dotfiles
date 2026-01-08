@@ -22,40 +22,69 @@ require("noeszc.keymaps")
 require("lazy").setup({
 	spec = {
 		{
-			"rose-pine/neovim",
-			name = "rose-pine",
-			priority = 1000, -- Load early to avoid flashing
+			"mcncl/alabaster.nvim",
+			lazy = false,
+			priority = 1000,
 			config = function()
-				require("rose-pine").setup({
-					variant = "main", -- main, moon, or dawn
-					dark_variant = "main",
-					styles = {
-						italic = true,
-						bold = true,
-						transparency = false,
-					},
-					-- This is the key part: Linking TS groups to standard ones
-					highlight_groups = {
-						-- Standard Keywords
-						["@keyword"] = { fg = "pine" },
-						["@storageclass"] = { fg = "pine" }, -- const, let, var
-
-						-- TypeScript & React Specifics
-						["typescriptVariable"] = { link = "Keyword" },
-						["typescriptImport"] = { link = "Keyword" },
-						["typescriptExport"] = { link = "Keyword" },
-						["typescriptPredefinedType"] = { fg = "iris" },
-						["@type.builtin.typescript"] = { fg = "iris" },
-
-						-- LSP Semantic Tokens (Fix for the white keywords)
-						["@lsp.type.keyword"] = { link = "Keyword" },
-						["@lsp.type.storageClass"] = { link = "Keyword" },
-					},
-				})
-
-				vim.cmd("colorscheme rose-pine")
+				vim.cmd.colorscheme("alabaster")
 			end,
 		},
+		{
+			"f-person/auto-dark-mode.nvim",
+			opts = {
+				update_interval = 3000,
+				set_dark_mode = function()
+					require("alabaster").setup({
+						style = "dark",
+						transparent = false,
+						italic_comments = false,
+					})
+					vim.cmd.colorscheme("alabaster")
+				end,
+				set_light_mode = function()
+					require("alabaster").setup({
+						style = "light",
+						transparent = false,
+						italic_comments = false,
+					})
+					vim.cmd.colorscheme("alabaster")
+				end,
+			},
+		},
+		-- {
+		-- 	"rose-pine/neovim",
+		-- 	name = "rose-pine",
+		-- 	priority = 1000, -- Load early to avoid flashing
+		-- 	config = function()
+		-- 		require("rose-pine").setup({
+		-- 			variant = "main", -- main, moon, or dawn
+		-- 			styles = {
+		-- 				italic = false,
+		-- 				bold = true,
+		-- 				transparency = false,
+		-- 			},
+		-- 			-- This is the key part: Linking TS groups to standard ones
+		-- 			highlight_groups = {
+		-- 				-- Standard Keywords
+		-- 				["@keyword"] = { fg = "pine" },
+		-- 				["@storageclass"] = { fg = "pine" }, -- const, let, var
+		--
+		-- 				-- TypeScript & React Specifics
+		-- 				["typescriptVariable"] = { link = "Keyword" },
+		-- 				["typescriptImport"] = { link = "Keyword" },
+		-- 				["typescriptExport"] = { link = "Keyword" },
+		-- 				["typescriptPredefinedType"] = { fg = "iris" },
+		-- 				["@type.builtin.typescript"] = { fg = "iris" },
+		--
+		-- 				-- LSP Semantic Tokens (Fix for the white keywords)
+		-- 				["@lsp.type.keyword"] = { link = "Keyword" },
+		-- 				["@lsp.type.storageClass"] = { link = "Keyword" },
+		-- 			},
+		-- 		})
+		--
+		-- 		vim.cmd("colorscheme rose-pine")
+		-- 	end,
+		-- },
 		-- {
 		-- 	"catppuccin/nvim",
 		-- 	name = "catppuccin",

@@ -1,6 +1,6 @@
 # --- font
-font-family              = CommitMono
-font-size                = 12
+font-family              = Monaco
+font-size                = 13
 
 # --- layout & spacing
 adjust-cell-height       = 25%
@@ -9,7 +9,7 @@ window-padding-x         = 12
 window-padding-y         = 10
 
 # --- theme
-theme = dark:Rose Pine,light:Rose Pine Dawn
+theme = dark:alabaster-dark,light:alabaster-light
 
 # --- font styles
 font-style-italic        = false
@@ -28,7 +28,7 @@ bold-is-bright           = false
 shell-integration        = zsh
 link-url                 = true
 mouse-hide-while-typing  = true
-macos-option-as-alt = false  
+macos-option-as-alt = true  
 
 # --- keybindings
 keybind = shift+enter=text:\x1b\r
