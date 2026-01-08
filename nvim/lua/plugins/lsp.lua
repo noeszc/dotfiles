@@ -75,7 +75,7 @@ return {
 				},
 			},
 			emmet_ls = {
-				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss", "less" },
+				filetypes = { "html", "css", "scss", "less" },
 			},
 		}
 

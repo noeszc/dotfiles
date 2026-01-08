@@ -1,6 +1,6 @@
 [user]
-    name = Noé Sánchez
-    email = noeszc@gmail.com
+	name = Noé Sánchez
+	email = noeszc@gmail.com
 
 [url "git@github.com:noeszc/"]
     insteadOf = "me:"
@@ -25,3 +25,18 @@
 
 [push]
     autoSetupRemote = true
+[safe]
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
+	directory = /Users/noeszc/code/work/actions-runner/_work/microfrontend-core-libs/microfrontend-core-libs
