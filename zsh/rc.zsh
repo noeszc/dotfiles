@@ -11,7 +11,8 @@ fi
 
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 zplug "lib/history", from:oh-my-zsh
-zplug "sobolevn/sobole-zsh-theme", from:github, as:theme
+# zplug "sobolevn/sobole-zsh-theme", from:github, as:theme
+zplug "subnixr/minimal", from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check; then
@@ -44,13 +45,6 @@ autoload -Uz compinit && compinit
 SOBOLE_THEME_MODE='light'
 export VISUAL=nvim
 export EDITOR=nvim
-export FZF_DEFAULT_OPTS="
-	--color=fg:#908caa,bg:#191724,hl:#ebbcba
-	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-	--color=border:#403d52,header:#31748f,gutter:#191724
-	--color=spinner:#f6c177,info:#9ccfd8
-	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
-
 export PATH="$HOME/.local/bin:$PATH:/usr/local/sbin:$DOTFILES"
 
 

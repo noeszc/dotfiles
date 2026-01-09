@@ -22,87 +22,13 @@ require("noeszc.keymaps")
 require("lazy").setup({
 	spec = {
 		{
-			"mcncl/alabaster.nvim",
+			"darianmorat/gruvdark.nvim",
 			lazy = false,
 			priority = 1000,
 			config = function()
-				vim.cmd.colorscheme("alabaster")
+				vim.cmd.colorscheme("gruvdark")
 			end,
 		},
-		{
-			"f-person/auto-dark-mode.nvim",
-			opts = {
-				update_interval = 3000,
-				set_dark_mode = function()
-					require("alabaster").setup({
-						style = "dark",
-						transparent = false,
-						italic_comments = false,
-					})
-					vim.cmd.colorscheme("alabaster")
-				end,
-				set_light_mode = function()
-					require("alabaster").setup({
-						style = "light",
-						transparent = false,
-						italic_comments = false,
-					})
-					vim.cmd.colorscheme("alabaster")
-				end,
-			},
-		},
-		-- {
-		-- 	"rose-pine/neovim",
-		-- 	name = "rose-pine",
-		-- 	priority = 1000, -- Load early to avoid flashing
-		-- 	config = function()
-		-- 		require("rose-pine").setup({
-		-- 			variant = "main", -- main, moon, or dawn
-		-- 			styles = {
-		-- 				italic = false,
-		-- 				bold = true,
-		-- 				transparency = false,
-		-- 			},
-		-- 			-- This is the key part: Linking TS groups to standard ones
-		-- 			highlight_groups = {
-		-- 				-- Standard Keywords
-		-- 				["@keyword"] = { fg = "pine" },
-		-- 				["@storageclass"] = { fg = "pine" }, -- const, let, var
-		--
-		-- 				-- TypeScript & React Specifics
-		-- 				["typescriptVariable"] = { link = "Keyword" },
-		-- 				["typescriptImport"] = { link = "Keyword" },
-		-- 				["typescriptExport"] = { link = "Keyword" },
-		-- 				["typescriptPredefinedType"] = { fg = "iris" },
-		-- 				["@type.builtin.typescript"] = { fg = "iris" },
-		--
-		-- 				-- LSP Semantic Tokens (Fix for the white keywords)
-		-- 				["@lsp.type.keyword"] = { link = "Keyword" },
-		-- 				["@lsp.type.storageClass"] = { link = "Keyword" },
-		-- 			},
-		-- 		})
-		--
-		-- 		vim.cmd("colorscheme rose-pine")
-		-- 	end,
-		-- },
-		-- {
-		-- 	"catppuccin/nvim",
-		-- 	name = "catppuccin",
-		-- 	lazy = false,
-		-- 	priority = 1000,
-		-- 	config = function()
-		-- 		vim.g.catppuccin_flavour = "mocha"
-		--
-		-- 		local colors = require("catppuccin.palettes").get_palette()
-		-- 		require("catppuccin").setup({
-		-- 			custom_highlights = {
-		-- 				LineNr = { fg = colors.overlay1 },
-		-- 			},
-		-- 		})
-		--
-		-- 		vim.cmd.colorscheme("catppuccin")
-		-- 	end,
-		-- },
 		-- --- smart commenting based on treesitter
 		{ "folke/ts-comments.nvim", opts = {}, event = "BufReadPre" },
 
