@@ -22,11 +22,22 @@ require("noeszc.keymaps")
 require("lazy").setup({
 	spec = {
 		{
-			"darianmorat/gruvdark.nvim",
+			"cdmill/neomodern.nvim",
 			lazy = false,
 			priority = 1000,
 			config = function()
-				vim.cmd.colorscheme("gruvdark")
+				require("neomodern").setup({
+					theme = "iceclimber", -- iceclimber | gyokuro | hojicha | roseprime
+					code_style = {
+						comments = "none",
+						conditionals = "none",
+						functions = "none",
+						keywords = "none",
+						strings = "none",
+						variables = "none",
+					},
+				})
+				require("neomodern").load()
 			end,
 		},
 		-- --- smart commenting based on treesitter

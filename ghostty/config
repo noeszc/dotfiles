@@ -1,34 +1,34 @@
-# --- font
+# --- Visual Theme
+theme = iceclimber
+
+# --- Font Configuration
 font-family              = Monaco
 font-size                = 12
-
-
-# --- layout & spacing
-window-padding-x         = 10
-window-padding-y         = 10
-
-# --- theme
-theme = dark:gruvdark-dark,light:gruvdark-light
-
-# --- font styles
 font-style-italic        = false
 font-style-bold          = false
 font-style-bold-italic   = false
 font-synthetic-style     = false
 font-thicken             = false
 
-# --- cursor & visual
+# --- Window & Layout
+window-padding-x         = 10
+window-padding-y         = 10
+
+# --- Cursor Customization
 cursor-style             = block
 cursor-style-blink       = true
-cursor-invert-fg-bg      = true
 cursor-opacity           = 0.8
 
-# --- shell & behavior
+# --- Shell & Interaction
 shell-integration        = zsh
 clipboard-read           = allow
 clipboard-write          = allow
 mouse-hide-while-typing  = true
+
+# --- macOS Specific
+macos-icon               = blueprint
+macos-icon-frame         = chrome
 macos-option-as-alt      = true
 
-# --- keybindings
+# --- Keybindings
 keybind = shift+enter=text:\x1b\r

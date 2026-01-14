@@ -2,6 +2,7 @@
 local set = vim.opt
 
 -- appearance
+set.termguicolors = true  -- enable true color support
 set.splitbelow = false
 set.signcolumn = "yes"
 set.relativenumber = true -- relative line numbers for faster jumps
