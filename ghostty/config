@@ -2,6 +2,7 @@
 theme = iceclimber
 
 # --- Font Configuration
+# font-family              = CommitMono
 font-family              = Monaco
 font-size                = 12
 font-style-italic        = false
@@ -11,8 +12,8 @@ font-synthetic-style     = false
 font-thicken             = false
 
 # --- Window & Layout
-window-padding-x         = 10
-window-padding-y         = 10
+# window-padding-x         = 10
+# window-padding-y         = 10
 
 # --- Cursor Customization
 cursor-style             = block
@@ -26,7 +27,7 @@ clipboard-write          = allow
 mouse-hide-while-typing  = true
 
 # --- macOS Specific
-macos-icon               = blueprint
+macos-icon               = retro
 macos-icon-frame         = chrome
 macos-option-as-alt      = true
 
