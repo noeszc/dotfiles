@@ -1,5 +1,5 @@
 # --- Visual Theme
-theme = iceclimber
+theme = dark:evergarden-fall-green,light:evergarden-spring-green
 
 # --- Font Configuration
 # font-family              = CommitMono

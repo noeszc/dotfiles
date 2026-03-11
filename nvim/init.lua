@@ -22,22 +22,30 @@ require("noeszc.keymaps")
 require("lazy").setup({
 	spec = {
 		{
-			"cdmill/neomodern.nvim",
+			"everviolet/nvim",
+			name = "evergarden",
 			lazy = false,
 			priority = 1000,
-			config = function()
-				require("neomodern").setup({
-					theme = "iceclimber", -- iceclimber | gyokuro | hojicha | roseprime
-					code_style = {
-						comments = "none",
-						conditionals = "none",
-						functions = "none",
-						keywords = "none",
-						strings = "none",
-						variables = "none",
+			opts = {
+				theme = {
+					variant = "spring",
+					accent = "green",
+				},
+				editor = {
+					transparent_background = false,
+					sign = { color = "none" },
+					float = {
+						color = "mantle",
+						solid_border = false,
 					},
-				})
-				require("neomodern").load()
+					completion = {
+						color = "surface0",
+					},
+				},
+			},
+			config = function(_, opts)
+				require("evergarden").setup(opts)
+				vim.cmd.colorscheme("evergarden")
 			end,
 		},
 		-- --- smart commenting based on treesitter
