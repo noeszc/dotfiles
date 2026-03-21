@@ -31,22 +31,42 @@ require("lazy").setup({
 					variant = "spring",
 					accent = "green",
 				},
-				editor = {
-					transparent_background = false,
-					sign = { color = "none" },
-					float = {
-						color = "mantle",
-						solid_border = false,
-					},
-					completion = {
-						color = "surface0",
-					},
-				},
 			},
 			config = function(_, opts)
 				require("evergarden").setup(opts)
 				vim.cmd.colorscheme("evergarden")
 			end,
+		},
+		-- --- sync colorscheme with system dark/light mode
+		{
+			"f-person/auto-dark-mode.nvim",
+			opts = {
+				update_interval = 1000,
+				set_dark_mode = function()
+					require("evergarden").setup({
+						theme = { variant = "fall", accent = "green" },
+						editor = {
+							transparent_background = false,
+							sign = { color = "none" },
+							float = { color = "mantle", solid_border = false },
+							completion = { color = "surface0" },
+						},
+					})
+					vim.cmd.colorscheme("evergarden")
+				end,
+				set_light_mode = function()
+					require("evergarden").setup({
+						theme = { variant = "spring", accent = "green" },
+						editor = {
+							transparent_background = false,
+							sign = { color = "none" },
+							float = { color = "mantle", solid_border = false },
+							completion = { color = "surface0" },
+						},
+					})
+					vim.cmd.colorscheme("evergarden")
+				end,
+			},
 		},
 		-- --- smart commenting based on treesitter
 		{ "folke/ts-comments.nvim", opts = {}, event = "BufReadPre" },
