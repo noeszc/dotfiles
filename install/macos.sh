@@ -87,16 +87,23 @@ defaults write com.apple.Finder FXPreferredViewStyle -string "clmv"
 # English: Folders first
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
-# English: Show Path bar and Status bar
-defaults write com.apple.finder ShowPathbar -bool true
-defaults write com.apple.finder ShowStatusBar -bool true
 
 # -----------------------------------------------------------------------------
-# 5. RESTART SERVICES
+# 5. DOCK
 # -----------------------------------------------------------------------------
-echo "Restarting Finder and SystemUIServer..."
+echo "Configuring Dock..."
+
+# Disable "Show suggested and recent apps" in Dock
+defaults write com.apple.dock show-recents -bool false
+
+
+# -----------------------------------------------------------------------------
+# 6. RESTART SERVICES
+# -----------------------------------------------------------------------------
+echo "Restarting Finder, Dock and SystemUIServer..."
 
 killall Finder
+killall Dock
 killall SystemUIServer
 
 echo "Done! Note: You may need to logout and log back in for all changes to take full effect."
