@@ -27,19 +27,23 @@ cd ~/dotfiles
 ### 3. Install Homebrew
 
 ```bash
-bash install/install-deps.sh
+bash install/homebrew.sh
 ```
 
-This installs Homebrew and then runs `brew bundle` against `install/Brewfile`,
-which covers all CLI tools and GUI apps (Ghostty, Raycast, 1Password, etc.).
+When it finishes, the installer prints a few `echo` commands — **run them**.
+They add Homebrew to your `.zprofile` so it's available in future sessions.
+Then open a new terminal window before continuing.
 
-> After Homebrew installs on Apple Silicon, it will tell you to add it to your PATH.
-> Add the following to your shell profile before continuing:
-> ```bash
-> eval "$(/opt/homebrew/bin/brew shellenv)"
-> ```
+### 4. Install packages
 
-### 4. Create symlinks
+```bash
+bash install/packages.sh
+```
+
+Runs `brew bundle` against `install/Brewfile` — installs all CLI tools and GUI
+apps (Ghostty, Raycast, Bitwarden, etc.).
+
+### 5. Create symlinks
 
 ```bash
 bash install/bootsrap.sh
@@ -47,7 +51,7 @@ bash install/bootsrap.sh
 
 Reads every `links.prop` file in the repo and symlinks each entry into your home directory. If a file already exists it will ask what to do (skip / overwrite / backup).
 
-### 5. Generate SSH keys
+### 6. Generate SSH keys
 
 ```bash
 bash git/keygen.sh
@@ -59,7 +63,7 @@ ready to paste into GitHub.
 
 See [git/README.md](git/README.md) for full details on the two-identity setup.
 
-### 6. Apply macOS settings
+### 7. Apply macOS settings
 
 ```bash
 bash install/macos.sh
@@ -70,7 +74,7 @@ column view, and disables the Spotlight shortcut (for Raycast).
 
 > Requires sudo. Log out and back in for all changes to take effect.
 
-### 7. Restart
+### 8. Restart
 
 Log out and back in (or reboot) so all system-level changes apply cleanly.
 
