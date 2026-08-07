@@ -1,6 +1,6 @@
 cask "ghostty"
 cask "raycast"
-cask "1password"
+cask "bitwarden"
 cask "spotify"
 cask "google-chrome"
 cask "slack"
