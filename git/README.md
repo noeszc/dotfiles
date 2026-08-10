@@ -1,81 +1,70 @@
 # Git & SSH Configuration
 
-Supports two separate identities (personal and work) that never conflict.
+Single SSH identity, with separate commit identities (personal and work) that
+never conflict — same approach as [andrew8088/dotfiles](https://github.com/andrew8088/dotfiles).
 
 ## How it works
 
 | File | Symlink | Purpose |
 |------|---------|---------|
 | `gitconfig` | `~/.gitconfig` | Global git config, personal identity by default |
-| `work.gitconfig` | `~/.work.gitconfig` | Work identity, loaded automatically for repos in `~/code/work/` |
-| `ssh_config` | `~/.ssh/config` | SSH host aliases to route each identity to the correct key |
+| `ssh_config` | `~/.ssh/config` | Single SSH key for github.com |
+
+`~/.work.gitconfig` is **not** part of this repo. It's a local, uncommitted
+file that overrides `user.email` for work repos — created once per machine,
+never symlinked, never pushed. Keeps company-specific info out of a dotfiles
+repo other people can see.
 
 ### Identity switching
 
-`~/.gitconfig` uses `includeIf` to automatically load `work.gitconfig` for any
-repo cloned inside `~/code/work/`:
+`~/.gitconfig` uses `includeIf` to automatically load `~/.work.gitconfig` for
+any repo cloned inside `~/code/work/`:
 
 ```gitconfig
 [includeIf "gitdir:~/code/work/"]
     path = ~/.work.gitconfig
 ```
 
-`work.gitconfig` also rewrites `github.com` URLs to the `github-work` SSH alias
-so the correct key is always used without any manual intervention:
-
-```gitconfig
-[url "git@github-work:"]
-    insteadOf = git@github.com:
-```
+Only one GitHub account/SSH key is needed as long as work repos are reachable
+through that same account (e.g. added to an org as an outside collaborator or
+member via your personal GitHub account). If a work repo ever lives under a
+truly separate GitHub account, add a second SSH host alias in `ssh_config`
+and rewrite the remote URL in `~/.work.gitconfig`, same as before.
 
 ## Setting up on a new machine
 
-### 1. Generate SSH keys
+### 1. Generate an SSH key
 
 ```bash
 bash git/keygen.sh
 ```
 
-The script will:
-- Create `~/.ssh/id_ed25519` for personal use
-- Create `~/.ssh/id_ed25519_work` for work (prompts for email)
-- Add both to the macOS keychain and SSH agent
-- Print the public keys ready to paste into GitHub
+Creates `~/.ssh/id_ed25519`, adds it to the macOS keychain and SSH agent, and
+prints the public key ready to paste into GitHub.
 
-### 2. Add public keys to GitHub
+### 2. Add the public key to GitHub
 
-- **Personal** → [github.com/settings/ssh/new](https://github.com/settings/ssh/new)
-- **Work** → your company's GitHub account SSH settings
+[github.com/settings/ssh/new](https://github.com/settings/ssh/new)
 
-### 3. Update work identity
+### 3. Create your work identity
 
-Edit `git/work.gitconfig` with your work name and email:
-
-```gitconfig
+```bash
+cat > ~/.work.gitconfig <<'EOF'
 [user]
     name = Your Name
     email = you@company.com
+EOF
 ```
 
-### 4. Verify
-
-```bash
-ssh -T git@github.com       # should greet your personal account
-ssh -T git@github-work      # should greet your work account
-```
-
-### 5. Clone work repos inside `~/code/work/`
+### 4. Clone work repos inside `~/code/work/`
 
 ```bash
 mkdir -p ~/code/work
 git clone git@github.com:company/repo.git ~/code/work/repo
 ```
 
-Git will automatically use your work identity and the correct SSH key.
+Git will automatically use the work identity for any repo under that path.
 
 ## Changing companies
 
-1. Update `email` in `git/work.gitconfig`
-2. Run `bash git/keygen.sh` to generate a new work key (skip personal if it already exists)
-3. Add the new public key to the new company's GitHub
-4. Verify with `ssh -T git@github-work`
+Just edit the email in `~/.work.gitconfig` — nothing to touch in this repo.

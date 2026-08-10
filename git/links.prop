@@ -1,4 +1,3 @@
 $DOTFILES/git/gitignore=$HOME/.gitignore
 $DOTFILES/git/gitconfig=$HOME/.gitconfig
-$DOTFILES/git/work.gitconfig=$HOME/.work.gitconfig
 $DOTFILES/git/ssh_config=$HOME/.ssh/config

@@ -51,17 +51,17 @@ bash install/bootsrap.sh
 
 Reads every `links.prop` file in the repo and symlinks each entry into your home directory. If a file already exists it will ask what to do (skip / overwrite / backup).
 
-### 6. Generate SSH keys
+### 6. Generate an SSH key
 
 ```bash
 bash git/keygen.sh
 ```
 
-Creates `~/.ssh/id_ed25519` (personal) and `~/.ssh/id_ed25519_work` (work),
-adds both to the macOS keychain and SSH agent, and prints the public keys
-ready to paste into GitHub.
+Creates `~/.ssh/id_ed25519`, adds it to the macOS keychain and SSH agent, and
+prints the public key ready to paste into GitHub.
 
-See [git/README.md](git/README.md) for full details on the two-identity setup.
+See [git/README.md](git/README.md) for full details on the identity setup,
+including how to add a separate work commit identity.
 
 ### 7. Apply macOS settings
 
@@ -84,7 +84,7 @@ Log out and back in (or reboot) so all system-level changes apply cleanly.
 
 ```
 dotfiles/
-├── git/          # gitconfig, work identity, SSH config, keygen script
+├── git/          # gitconfig, SSH config, keygen script
 ├── ghostty/      # terminal emulator config
 ├── nvim/         # Neovim config (lazy.nvim)
 ├── tmux/         # tmux config + tpm
@@ -100,5 +100,5 @@ Each directory contains a `links.prop` that maps dotfiles → home directory pat
 |------|---------|
 | Add a new symlink | Edit the relevant `links.prop`, re-run `bash install/bootsrap.sh` |
 | Install a new brew package | Add to `install/Brewfile`, run `brew bundle --file install/Brewfile` |
-| Switch work identity | Edit `git/work.gitconfig` with new email |
-| New work SSH key | Run `bash git/keygen.sh` |
+| Switch work identity | Edit `~/.work.gitconfig` with new email |
+| New SSH key | Run `bash git/keygen.sh` |
