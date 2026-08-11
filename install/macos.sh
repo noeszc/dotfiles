@@ -3,7 +3,8 @@
 # =============================================================================
 # macOS Configuration Script
 # Target: macOS Sequoia (15.x) and later
-# Description: Keyboard speed, Caps Lock to Escape, Finder Column View, and Sidebar.
+# Description: Keyboard speed, Caps Lock to Escape, Finder Column View, Sidebar,
+#              Dock behavior, and Hot Corners.
 # =============================================================================
 
 echo "Starting macOS configuration..."
@@ -98,7 +99,20 @@ defaults write com.apple.dock show-recents -bool false
 
 
 # -----------------------------------------------------------------------------
-# 6. RESTART SERVICES
+# 6. HOT CORNERS
+# -----------------------------------------------------------------------------
+echo "Configuring Hot Corners..."
+
+# Top-left -> Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-corner-modifier -int 0
+
+# Bottom-right -> Desktop (Show Desktop)
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-corner-modifier -int 0
+
+# -----------------------------------------------------------------------------
+# 7. RESTART SERVICES
 # -----------------------------------------------------------------------------
 echo "Restarting Finder, Dock and SystemUIServer..."
 
