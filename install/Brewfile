@@ -8,6 +8,7 @@ cask "font-source-code-pro"
 cask "antinote"
 
 brew "fnm"
+brew "pnpm"
 brew "neovim"
 brew "zsh"
 brew "zoxide"
