@@ -1,8 +1,0 @@
-[user]
-	name = Noé Sánchez
-	email = noe@company.com
-
-# Rewrite github.com URLs to use the work SSH alias (github-work)
-# so the correct key is picked up automatically for all work repos
-[url "git@github-work:"]
-	insteadOf = git@github.com:

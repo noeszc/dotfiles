@@ -2,14 +2,7 @@ Host *
   AddKeysToAgent yes
   UseKeychain yes
 
-# Personal GitHub
 Host github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_ed25519
-
-# Work GitHub (same host, different key via alias)
-Host github-work
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_work

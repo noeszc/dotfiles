@@ -5,6 +5,7 @@ cask "spotify"
 cask "google-chrome"
 cask "slack"
 cask "font-source-code-pro"
+cask "antinote"
 
 brew "fnm"
 brew "neovim"
