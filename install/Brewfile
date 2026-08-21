@@ -6,6 +6,7 @@ cask "google-chrome"
 cask "slack"
 cask "font-source-code-pro"
 cask "antinote"
+cask "gitkraken"
 
 brew "fnm"
 brew "pnpm"
