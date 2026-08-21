@@ -9,6 +9,7 @@ cask "antinote"
 
 brew "fnm"
 brew "pnpm"
+brew "oven-sh/bun/bun"
 brew "neovim"
 brew "zsh"
 brew "zoxide"
