@@ -1,0 +1,8 @@
+$DOTFILES/claude/skills/grilling=$HOME/.claude/skills/grilling
+$DOTFILES/claude/skills/grill-with-docs=$HOME/.claude/skills/grill-with-docs
+$DOTFILES/claude/skills/domain-modeling=$HOME/.claude/skills/domain-modeling
+$DOTFILES/claude/skills/codex-code-review=$HOME/.claude/skills/codex-code-review
+$DOTFILES/claude/skills/undefect=$HOME/.claude/skills/undefect
+$DOTFILES/claude/skills/show-me=$HOME/.claude/skills/show-me
+$DOTFILES/claude/skills/visual-pr=$HOME/.claude/skills/visual-pr
+$DOTFILES/claude/skills/spec=$HOME/.claude/skills/spec
