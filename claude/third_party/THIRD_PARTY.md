@@ -16,4 +16,4 @@ Own skills (not third-party): spec.
 
 All MIT. Licenses in this folder.
 
-Each skill is linked one by one in ../links.prop, because ~/.claude/skills also holds folders managed by the Claude app. New skill = new folder + new line in links.prop.
+The whole skills folder is linked in ../links.prop. Folders the Claude app writes there (synced/, .trash/) are ignored by skills/.gitignore.
