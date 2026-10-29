@@ -4,11 +4,10 @@ if command -v fnm &> /dev/null; then
   eval "$(fnm env --use-on-cd)"
 fi
 
-# --- corepack for pnpm and yarn
+# --- corepack for yarn (pnpm is installed via Homebrew, see install/Brewfile)
 if command -v corepack &> /dev/null; then
   export COREPACK_HOME="$HOME/.cache/corepack"
-  # enables pnpm and yarn based on the current node version
-  corepack enable pnpm yarn
+  corepack enable yarn
 fi
 
 
